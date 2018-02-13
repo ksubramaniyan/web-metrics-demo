@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webmetric xmlns="http://www.webmetrics.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.webmetrics.com webmetrics.xsd" enabled="true">
+	<whiteListedUris>
+		<whiteListedUri>
+			<uri>/api/getDelayed</uri>
+			<display>api.json.getDelayed</display>
+			<histogram>25,50,100,500,1000</histogram>
+		</whiteListedUri>
+		<whiteListedUri>
+			<uri>/api/getDelayed/v1/*</uri>
+			<display>api.json.v1.getDelayed</display>
+			<histogram>10,30,50,100,500,1000</histogram>
+		</whiteListedUri>
+	</whiteListedUris>
+	<histogram>50,100,500,1000</histogram>
+	<domain>com.hd.webmetrics</domain>
+	<consumers enabled="true">
+		<idField>client</idField>
+		<idFieldScope>header</idFieldScope>
+		<consumer id="MBL" alias="Mobile"/>
+		<consumer id="TBL" alias="Tablet" />
+		<consumer id="DSKT" />
+	</consumers>
+	<metrics-params>
+		<metrics-param>
+			<name>nonWhiteListName</name>
+			<value>other</value>
+		</metrics-param>
+	</metrics-params>
+</webmetric>
